@@ -4,7 +4,7 @@ export const userApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: "http://localhost:3000/user/login",
+        url: "https://funhubbackend-production.up.railway.app/user/login",
         method: "POST",
         body: data,
       }),

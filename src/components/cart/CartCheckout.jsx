@@ -15,7 +15,7 @@ export default function CartCheckout({ subs }) {
   async function handleOrder() {
     try {
       setLoading(true);
-      await axios.post("https://funhubbackend-production.up.railway.app/order/addOrder", values, {
+      await axios.post("http://localhost:3000/order/addOrder", values, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${userInfo.token}`,
@@ -23,6 +23,7 @@ export default function CartCheckout({ subs }) {
       });
       setLoading(false);
       toast.success("Your order placed successfully");
+
     } catch (err) {
       console.log(err);
       setLoading(false);

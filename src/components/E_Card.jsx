@@ -62,7 +62,7 @@ export default function E_Card({ product, id }) {
               </Typography>
             </div>
             <RatingStars
-              rating={rating}
+              rating={Number(rating).toFixed(2)}
               reviews={numReviews}
               showText={showReviewsText}
             />

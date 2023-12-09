@@ -42,7 +42,7 @@ export default function ProductList() {
   const createProductHandler = async () => {
     if (window.confirm("Are you sure you want to create a new product?")) {
       try {
-        const res = await axios.post("http://localhost:3000/product", null, {
+        const res = await axios.post("https://funhubbackend-production.up.railway.app/product", null, {
           headers: headers,
         });
         console.log(res);
@@ -55,7 +55,7 @@ export default function ProductList() {
   const deleteProductHandler = async (id) => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       try {
-        const url = `http://localhost:3000/product/${id}`;
+        const url = `https://funhubbackend-production.up.railway.app/product/${id}`;
         const res = await axios.delete(url, { headers });
         console.log(res);
         window.location.reload();

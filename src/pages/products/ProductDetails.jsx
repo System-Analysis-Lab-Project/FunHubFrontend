@@ -48,7 +48,7 @@ export default function VanDetail() {
 
     try {
       const res = await axios.post(
-        `http://localhost:3000/product/${id}/reviews`,
+        `https://funhubbackend-production.up.railway.app/product/${id}/reviews`,
         {
           rating,
           comment: e.target.feedback.value,
@@ -150,12 +150,12 @@ export default function VanDetail() {
                   <div className="flex items-center">
                     <div className="flex items-center">
                       <RatingStars
-                        rating={product.rating}
+                        rating={parseFloat(product.rating.toFixed(2))}
                         reviews={product.numReviews}
                         showText={hideReviewsText}
                       />
                     </div>
-                    <p className="sr-only">{product.rating} out of 5 stars</p>
+                    <p className="sr-only">{Number(product.rating).toFixed(2)} out of 5 stars</p>
                     <Link
                       to="."
                       className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500"
@@ -201,7 +201,7 @@ export default function VanDetail() {
           </div>
         </div>
       </div>
-      {userInfo.token ? (
+      {userInfo?.token ? (
         <>
           <Reviews product={product} />
           <form
