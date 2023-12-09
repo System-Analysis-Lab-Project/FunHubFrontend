@@ -57,7 +57,7 @@ export default function ProductEdit() {
       setIsLoading(true);
 
       const res = await axios.put(
-        `http://localhost:3000/product/${id}`,
+        `https://funhubbackend-production.up.railway.app/product/${id}`,
         values,
         {
           headers: headers,

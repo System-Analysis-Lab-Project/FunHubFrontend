@@ -19,7 +19,7 @@ export default function VanDetail() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await axios.get(`http://localhost:3000/product/${id}`);
+        const res = await axios.get(`https://funhubbackend-production.up.railway.app/product/${id}`);
         setProduct(res?.data);
         setLoading(false);
       } catch (err) {

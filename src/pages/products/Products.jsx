@@ -12,7 +12,7 @@ export default function Products() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await axios.get("http://localhost:3000/product");
+        const res = await axios.get("https://funhubbackend-production.up.railway.app/product");
         setProducts(res?.data);
         setLoading(false);
       } catch (err) {

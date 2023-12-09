@@ -12,7 +12,7 @@ export default function ProductList() {
   const user = useSelector((store) => store.auth.userInfo);
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/product");
+      const res = await axios.get("https://funhubbackend-production.up.railway.app/product");
       setProduct(res?.data);
       setLoading(false);
     } catch (err) {

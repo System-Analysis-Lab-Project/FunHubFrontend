@@ -14,7 +14,7 @@ export default function Header() {
     if (searchQuery === "") return;
     try {
       const response = await axios.post(
-        "http://localhost:3000/product/search",
+        "https://funhubbackend-production.up.railway.app/product/search",
         {
           name: searchQuery,
         }

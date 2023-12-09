@@ -28,7 +28,7 @@ export default function Profile() {
           _id: userInfo._id,
         };
 
-        const res = await axios.get("http://localhost:3000/order/getMyOrders", {
+        const res = await axios.get("https://funhubbackend-production.up.railway.app/order/getMyOrders", {
           headers: headers,
         });
         console.log(res);
@@ -148,7 +148,7 @@ function About({ user, dispatch, userInfo }) {
 
     try {
       const res = await axios.put(
-        "http://localhost:3000/user/profile",
+        "https://funhubbackend-production.up.railway.app/user/profile",
         values,
         { headers }
       );
